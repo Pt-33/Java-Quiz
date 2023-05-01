@@ -1,0 +1,500 @@
+package Quiz;
+
+public class ConsoleColors {
+   
+    
+    public static final String BLACK = "\033[0;30m";
+    public static final String RED = "\033[0;31m";     // RED
+    public static final String GREEN = "\033[0;32m";   // GREEN
+   
+}
+
+
+package Quiz;
+import java.util.Scanner;
+public interface Quiz {
+	void quiz();
+	void score();
+	static void display()
+	{
+		System.out.println("This quiz contains 5 questions");
+		System.out.println("Once entered you cannot preview your answer and it will be treated as your final answer");
+		System.out.println("All the best");
+	}
+
+}
+
+package Quiz;
+import java.util.Scanner;
+public class Java implements Quiz {
+	int o1,o2,o3,o4,o5,count=0;
+	public void quiz()
+	{   
+		
+		Scanner s=new Scanner(System.in);
+		
+		System.out.println("JAVA QUIZ");
+		System.out.println("Q1.When member of class is specified private,then");
+		System.out.println("1.That member can only be accessed by other members of another class");
+		System.out.println("2.That member can only be accessed by other members of its class");
+		System.out.println("3.That member can only be accessed by other members of inherited class");
+		System.out.println("4.That member can only be accessed by other members of class in another package");
+				
+		System.out.println("Enter your choice");
+		o1=s.nextInt();
+		if(o1==2)
+			count++;
+		System.out.println("Q2.Which is the correct way of specifying a static block?");
+		System.out.println("1.static() {} 2.void static {} 3.static {} 4.static block{}");
+		System.out.println("Enter your choice");
+		o2=s.nextInt();
+		if(o2==3)
+			count++;
+		System.out.println("Q3.Static members cannot refer to?");
+		System.out.println("1.Class 2.This 3.Super 4.Both 1&2");
+		System.out.println("Enter your choice");
+		o3=s.nextInt();
+		if(o3==4)
+			count++;
+		System.out.println("Q4.Which of the following is correct with respect to inner class?");
+		System.out.println("1.Can access all members of outer class");
+		System.out.println("2.Can access no members of outer class");
+		System.out.println("3.Can access public members of outer class");
+		System.out.println("4.None of the above");
+		System.out.println("Enter your choice");
+		o4=s.nextInt();
+		if(o4==1)
+			count++;
+		System.out.println("Q5.The number of elements in an array,test can be found using?");
+		System.out.println("1.test.len 2.test.length 3.test.count 4.test.count+");
+		System.out.println("Enter your choice");
+		o5=s.nextInt();
+		if(o5==2)
+			count++;
+	}
+	public void score()
+	{ 
+		Scanner s=new Scanner(System.in);
+		int x;
+		System.out.println("YOUR JAVA QUIZ IS SUBMITTED SUCCESSFULLY");
+		System.out.println("1.View score 2.Check your answer 3.View score and answer");
+		System.out.println("Enter your choice");
+		x=s.nextInt();
+		switch(x)
+		{
+		case 1:System.out.println("YOUR SCORE IS : "+ count);
+		break;
+		case 2:{
+			System.out.println("YOUR JAVA ANSWERS:");
+			System.out.println("THE RIGHT ANSWERS ARE DISPLAYED IN "+ConsoleColors.GREEN+"GREEN "+ConsoleColors.BLACK+"Letters");
+			System.out.println(ConsoleColors.BLACK+"Q1.When member of class is specified private,then");
+			System.out.println(ConsoleColors.RED+"1.That member can only be accessed by other members of another class");
+			System.out.println(ConsoleColors.GREEN+"2.That member can only be accessed by other members of its class");
+			System.out.println(ConsoleColors.RED+"3.That member can only be accessed by other members of inherited class");
+			System.out.println(ConsoleColors.RED+"4.That member can only be accessed by other members of class in another package");		
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o1);
+			if(o1==2)	
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+			System.out.println(ConsoleColors.BLACK+"Q2.Which is the correct way of specifying a static block?");
+			System.out.println(ConsoleColors.RED+"1.static() {} 2.void static{}"+ConsoleColors.GREEN+"  3.static{}"+ConsoleColors.RED+"  4.static block{}");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o2);
+			if(o2==3)
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+			System.out.println(ConsoleColors.BLACK+"Q3.Static members cannot refer to?");
+			System.out.println(ConsoleColors.RED+"1.Class 2.This 3.Super "+ConsoleColors.GREEN+" 4.Both 1&2");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o3);
+			if(o3==4)
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+			System.out.println(ConsoleColors.BLACK+"Q4.Which of the following is correct with respect to inner class?");
+			System.out.println(ConsoleColors.GREEN+"1.Can access all members of outer class");
+			System.out.println(ConsoleColors.RED+"2.Can access no members of outer class");
+			System.out.println(ConsoleColors.RED+"3.Can access public members of outer class");
+			System.out.println(ConsoleColors.RED+"4.None of the above");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o4);
+			if(o4==1)
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+			System.out.println(ConsoleColors.BLACK+"Q5.The number of elements in an array,test can be found using?");
+			System.out.println(ConsoleColors.RED+"1.test.len "+ConsoleColors.GREEN+ "2.test.length "+ConsoleColors.RED+"3.test.count 4.test.count+");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o5);
+			if(o5==2)
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+		}break;
+		case 3:{
+			System.out.println("YOUR SCORE IS :  "+count);
+			System.out.println("YOUR JAVA ANSWERS:");
+			System.out.println("THE RIGHT ANSWERS ARE DISPLAYED IN "+ConsoleColors.GREEN+"GREEN "+ConsoleColors.BLACK+"Letters");
+			System.out.println(ConsoleColors.BLACK+"Q1.When member of class is specified private,then");
+			System.out.println(ConsoleColors.RED+"1.That member can only be accessed by other members of another class");
+			System.out.println(ConsoleColors.GREEN+"2.That member can only be accessed by other members of its class");
+			System.out.println(ConsoleColors.RED+"3.That member can only be accessed by other members of inherited class");
+			System.out.println(ConsoleColors.RED+"4.That member can only be accessed by other members of class in another package");		
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o1);
+			if(o1==2)	
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+			System.out.println(ConsoleColors.BLACK+"Q2.Which is the correct way of specifying a static block?");
+			System.out.println(ConsoleColors.RED+"1.static() {} 2.void static{}"+ConsoleColors.GREEN+"  3.static{}"+ConsoleColors.RED+"  4.static block{}");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o2);
+			if(o2==3)
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+			System.out.println(ConsoleColors.BLACK+"Q3.Static members cannot refer to?");
+			System.out.println(ConsoleColors.RED+"1.Class 2.This 3.Super "+ConsoleColors.GREEN+" 4.Both 1&2");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o3);
+			if(o3==4)
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+			System.out.println(ConsoleColors.BLACK+"Q4.Which of the following is correct with respect to inner class?");
+			System.out.println(ConsoleColors.GREEN+"1.Can access all members of outer class");
+			System.out.println(ConsoleColors.RED+"2.Can access no members of outer class");
+			System.out.println(ConsoleColors.RED+"3.Can access public members of outer class");
+			System.out.println(ConsoleColors.RED+"4.None of the above");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o4);
+			if(o4==1)
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+			System.out.println(ConsoleColors.BLACK+"Q5.The number of elements in an array,test can be found using?");
+			System.out.println(ConsoleColors.RED+"1.test.len "+ConsoleColors.GREEN+ "2.test.length "+ConsoleColors.RED+"3.test.count 4.test.count+");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o5);
+			if(o5==2)
+			System.out.println(ConsoleColors.BLACK+"Right answer");
+			else 
+			System.out.println(ConsoleColors.BLACK+"Wrong answer");
+		}break;
+		}}
+}
+
+
+package Quiz;
+import java.util.Scanner;
+public class Dsa implements Quiz {
+	int o1,o2,o3,o4,o5,count=0;
+	public void quiz()
+	{
+		Scanner s=new Scanner(System.in);
+		
+		System.out.println("DSA QUIZ");
+		System.out.println("Q1.A linear list of elements in which deletion can be done from one end and insertion acn take place only at the other end is known as?");
+		System.out.println("1.Queue 2.Stack 3.Linked List 4.Tree");
+		System.out.println("Enter your choice");
+		o1=s.nextInt();
+		if(o1==1)
+			count++;
+		System.out.println("Q2.If the elements 'a','b','c' and 'd' are placed in a queue and deleted one at a time, in what order will they be removed? ");
+		System.out.println("1.dcba 2.abcd 3.cabd 4.dcab");
+		System.out.println("Enter your choice");
+		o2=s.nextInt();
+		if(o2==2)
+			count++;
+		System.out.println("Q3.Polynomial addition is implemented using _________  data structure ");
+		System.out.println("1.Queue 2.Stack 3.Tree 4.Linked List");
+		System.out.println("Enter your choice");
+		o3=s.nextInt();
+		if(o3==4)
+			count++;
+		System.out.println("Q4.In a circularly linked list organization, insertion of a record involves the modification of?");
+		System.out.println("1.No pointer 2.1 pointer 3.2 pointers 4.3 pointers");
+		System.out.println("enter your choice");
+		o4=s.nextInt();
+		if(o4==3)
+			count++;
+		System.out.println("Q5.5 people p,q,r,s, and t are standing in a queue. r is standing between p and t. p is just behind q and q is second in the queue. Who is second last in the queue? ");
+        System.out.println("1.s 2.r 3.t 4.p");
+		System.out.println("Enter your choice");
+		o5=s.nextInt();
+		if(o5==2)
+			count++;
+	}
+	public void score()
+	{ 
+		Scanner s=new Scanner(System.in);
+		int x;
+		System.out.println("YOUR DSA QUIZ IS SUBMITTED SUCCESSFULLY");
+		System.out.println("1.View score 2.Check your answer 3.View score and answer");
+		System.out.println("Enter your choice");
+		x=s.nextInt();
+		switch(x)
+		{
+		case 1:System.out.println("YOUR SCORE IS : "+ count);
+		break;
+		case 2:{
+			System.out.println("YOUR DSA ANSWERS:");
+			System.out.println("THE RIGHT ANSWERS ARE DISPLAYED IN" +ConsoleColors.GREEN+" GREEN" +ConsoleColors.BLACK+" LETTERS");
+			System.out.println("Q1.A linear list of elements in which deletion can be done from one end and insertion acn take place only at the other end is known as?");
+			System.out.println(ConsoleColors.GREEN+" 1.Queue "+ConsoleColors.RED+"2.Stack 3.Linked List 4.Tree");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o1);
+			if(o1==1)	
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q2.If the elements 'a','b','c' and 'd' are placed in a queue and deleted one at a time, in what order will they be removed? ");
+			System.out.println(ConsoleColors.RED+"1.dcba "+ConsoleColors.GREEN+"2.abcd "+ConsoleColors.RED+"3.cabd 4.dcab");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o2);
+			if(o2==2)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q3.Polynomial addition is implemented using _________  data structure ");
+			System.out.println(ConsoleColors.RED+"1.Queue 2.Stack 3.Tree "+ConsoleColors.GREEN+"4.Linked List");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o3);
+			if(o3==4)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q4.In a circularly linked list organization, insertion of a record involves the modification of?");
+			System.out.println(ConsoleColors.RED+"1.No pointer 2.1 pointer "+ConsoleColors.GREEN+"3.2 Pointers "+ConsoleColors.RED+" 4.3 pointers");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o4);
+			if(o4==3)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q5.5 people p,q,r,s, and t are standing in a queue. r is standing between p and t. p is just behind q and q is second in the queue. Who is second last in the queue? ");
+	        System.out.println(ConsoleColors.RED+"1.s "+ConsoleColors.GREEN+"2.r "+ConsoleColors.RED+"3.t 4.p");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o5);
+			if(o5==2)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+		}break;
+		case 3:{
+			System.out.println("YOUR SCORE IS :  "+count);
+			System.out.println("YOUR DSA ANSWERS:");
+			System.out.println("THE RIGHT ANSWERS ARE DISPLAYED IN" +ConsoleColors.GREEN+" GREEN" +ConsoleColors.BLACK+" LETTERS");
+			System.out.println("Q1.A linear list of elements in which deletion can be done from one end and insertion acn take place only at the other end is known as?");
+			System.out.println(ConsoleColors.GREEN+" 1.Queue "+ConsoleColors.RED+"2.Stack 3.Linked List 4.Tree");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o1);
+			if(o1==1)	
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q2.If the elements 'a','b','c' and 'd' are placed in a queue and deleted one at a time, in what order will they be removed? ");
+			System.out.println(ConsoleColors.RED+"1.dcba "+ConsoleColors.GREEN+"2.abcd "+ConsoleColors.RED+"3.cabd 4.dcab");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o2);
+			if(o2==2)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q3.Polynomial addition is implemented using _________  data structure ");
+			System.out.println(ConsoleColors.RED+"1.Queue 2.Stack 3.Tree "+ConsoleColors.GREEN+"4.Linked List");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o3);
+			if(o3==4)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q4.In a circularly linked list organization, insertion of a record involves the modification of?");
+			System.out.println(ConsoleColors.RED+"1.No pointer 2.1 pointer "+ConsoleColors.GREEN+"3.2 Pointers "+ConsoleColors.RED+" 4.3 pointers");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o4);
+			if(o4==3)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q5.5 people p,q,r,s, and t are standing in a queue. r is standing between p and t. p is just behind q and q is second in the queue. Who is second last in the queue? ");
+	        System.out.println(ConsoleColors.RED+"1.s "+ConsoleColors.GREEN+"2.r "+ConsoleColors.RED+"3.t 4.p");
+			System.out.println(ConsoleColors.BLACK+"Your answer is "+o5);
+			if(o5==2)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+		}break;
+	}
+	}
+
+}
+
+package Quiz;
+import java.util.Scanner;
+public class Cprog implements Quiz {
+	int o1,o2,o3,o4,o5,count=0;
+	public void quiz()
+	{
+		Scanner s=new Scanner(System.in);
+		
+		System.out.println("CO QUIZ");
+		System.out.println("Q1.In ASCII each character is represented as a _____ code");
+		System.out.println("1.1 bit 2.8 bit 3.6 bit 4.9 bit");
+		System.out.println("Enter your choice");
+		o1=s.nextInt();
+		if(o1==2)
+			count++;
+		System.out.println("Q2.A processor performing fetch or decoding of different instructions during the execution of another instruction is called?");
+		System.out.println("1.Super scaling 2.Parallel Computation 3.Pipelining 4.None of the above");
+		System.out.println("Enter your choice");
+		o2=s.nextInt();
+		if(o2==3)
+			count++;
+		System.out.println("Q3.The process where in the processor constantly checks the status flags is called as ____");
+		System.out.println("1.polling 2.Direct Memory Access 3.echoing 4.I/O mapping");
+		System.out.println("Enter your choice");
+		o3=s.nextInt();
+		if(o3==1)
+			count++;
+		System.out.println("Q4.How many types of modes of I/O data transfers are there?");
+		System.out.println("1.Two 2.Three 3.Four 4.Five");
+		System.out.println("enter your choice");
+		o4=s.nextInt();
+		if(o4==2)
+			count++;
+		System.out.println("Q5.____ is a piece of hardware that executes a set of machine language instructions");
+		System.out.println("1.Controller 2.Bus 3.Processor 4.I/O mapping");
+		System.out.println("Enter your choice");
+		o5=s.nextInt();
+		if(o5==3)
+			count++;
+	}
+	public void score()
+	{ 
+		Scanner s=new Scanner(System.in);
+		int x;
+		System.out.println("YOUR CO QUIZ IS SUBMITTED SUCCESSFULLY");
+		System.out.println("1.View score 2.Check your answer 3.View score and answer");
+		System.out.println("Enter your choice");
+		x=s.nextInt();
+		switch(x)
+		{
+		case 1:System.out.println("YOUR SCORE IS : "+ count);
+		break;
+		case 2:{
+			System.out.println("YOUR CO ANSWERS:");
+			System.out.println("THE RIGHT ANSWERS ARE DISPLAYED IN CAPITAL LETTERS");
+			System.out.println("Q1.In ASCII each character is represented as a _____ code");
+			System.out.println("1.1 bit 2.8 BIT 3.6 bit 4.9 bit");	
+			System.out.println("Your answer is "+o1);
+			if(o1==2)	
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q2.A processor performing fetch or decoding of different instructions during the execution of another instruction is called?");
+	        	System.out.println("1.Super scaling 2.Parallel Computation 3.PIPELINING 4.None of the above");
+			System.out.println("Your answer is "+o2);
+			if(o2==3)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q3.The process where in the processor constantly checks the status flags is called as ____");
+			System.out.println("1.POLLING 2.Direct Memory Access 3.echoing 4.I/O mapping");
+			System.out.println("Your answer is "+o3);
+			if(o3==1)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q4.How many types of modes of I/O data transfers are there?");
+			System.out.println("1.Two 2.THREE 3.Four 4.Five");
+			System.out.println("Your answer is "+o4);
+			if(o4==2)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q5.____ is a piece of hardware thet executes a set of machine language instructions");
+			System.out.println("1.Controller 2.Bus 3.PROCESSOR 4.I/O mapping");
+			System.out.println("Your answer is "+o5);
+			if(o5==3)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+		}break;
+		case 3:{
+			System.out.println("YOUR SCORE IS :  "+count);
+			System.out.println("YOUR CO ANSWERS:");
+			System.out.println("THE RIGHT ANSWERS ARE DISPLAYED IN CAPITAL LETTERS");
+			System.out.println("Q1.In ASCII each character is represented as a _____ code");
+			System.out.println("1.1 bit 2.8 BIT 3.6 bit 4.9 bit");		
+			System.out.println("Your answer is "+o1);
+			if(o1==2)	
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q2.A processor performing fetch or decoding of different instructions during the execution of another instruction is called?");
+	        	System.out.println("1.Super scaling 2.Parallel Computation 3.PIPELINING 4.None of the above");
+			System.out.println("Your answer is "+o2);
+			if(o2==3)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q3.The process where in the processor constantly checks the status flags is called as ____");
+			System.out.println("1.POLLING 2.Direct Memory Access 3.echoing 4.I/O mapping");
+			System.out.println("Your answer is "+o3);
+			if(o3==1)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q4.How many types of modes of I/O data transfers are there?");
+			System.out.println("1.Two 2.THREE 3.Four 4.Five");
+			System.out.println("Your answer is "+o4);
+			if(o4==2)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+			System.out.println("Q5.____ is a piece of hardware thet executes a set of machine language instructions");
+			System.out.println("1.Controller 2.Bus 3.PROCESSOR 4.I/O mapping");
+			System.out.println("Your answer is "+o5);
+			if(o5==3)
+			System.out.println("Right answer");
+			else 
+			System.out.println("Wrong answer");
+		}break;
+		}
+}
+	
+
+}
+
+package Quiz;
+import java.util.Scanner;
+public class Main {
+public static void main(String arg[])
+{
+	int opt;
+	System.out.println("WELCOME TO CSE QUIZ");
+	Scanner s=new Scanner(System.in);
+	for(;;)
+	{
+		System.out.println("Enter which subject quiz you want to opt for?");
+		System.out.println("1.Java 2.Dsa 3.Cog 4.None");
+		System.out.println("Enter your choice");
+		opt=s.nextInt();
+		Java j=new Java();
+		Dsa d=new Dsa();
+		Cog c=new Cog();
+		if(opt==1)
+		{
+			Quiz.display();
+			j.quiz();
+			j.score();
+		}
+		else if(opt==2)
+		{
+			Quiz.display();
+			d.quiz();
+			d.score();
+		}
+		else if(opt==3)
+		{
+			Quiz.display();
+		    c.quiz();
+			c.score();
+		}
+		else if(opt==4)
+		{
+			System.out.println("Thank you");
+			break;
+		}
+		else
+			System.out.println("Invalid choice");
+	}
+	}
+
+}
